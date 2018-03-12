@@ -1,0 +1,47 @@
+﻿@model MyMvcCourse.Models.DepEmp
+
+@{
+    ViewBag.Title = "員工查詢";
+}
+
+<h2>@ViewBag.DepName</h2>
+<div class="row">
+    <div class="col-xs-4">
+        @foreach (var item in Model.Departments)
+        {
+            <p>
+                @Html.ActionLink(item.fDepName, "Index", new { depId = item.fDepId })
+            </p>
+        }
+    </div>
+    <div class="col-xs-8">
+        <table class="table">
+            <tr>
+                <th>員工編號</th>
+                <th>姓名</th>
+                <th>電話</th>
+                <th>@Html.ActionLink("新增", "Create", new { }, new { @class = "btn btn-danger" })</th>
+            </tr>
+            @foreach (var item in Model.Employees)
+            {
+                <tr>
+                    <td>@item.fEmpId</td>
+                    <td>@item.fName</td>
+                    <td>@item.fPhone</td>
+                    <td>
+                        @Html.ActionLink("刪除", "Delete", new { fEmpId = item.fEmpId }
+                        , new { onclick = "return confirm('確定要刪除嗎');", @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+
+    @if (TempData["IsDelete"] != null && TempData["IsDelete"].Equals(true) )
+    {
+        @:刪除成功
+        <script>
+            alert("刪除成功");
+        </script>
+    }
+</div>

@@ -1,0 +1,90 @@
+﻿@using PagedList
+@using PagedList.Mvc
+
+@model IPagedList<MyMvcCourse.Models.Product>
+
+@{
+    ViewBag.Title = "產品資料";
+}
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+<h2>產品資料</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().產品編號)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().產品)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().供應商編號)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().類別編號)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().單位數量)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().單價)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().庫存量)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().已訂購量)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().安全存量)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().不再銷售)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.產品編號)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.產品)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.供應商編號)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.類別編號)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.單位數量)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.單價)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.庫存量)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.已訂購量)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.安全存量)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.不再銷售)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+    </tr>
+}
+
+</table>
+@Html.PagedListPager(Model,page=> Url.Action("Index", new { page }))

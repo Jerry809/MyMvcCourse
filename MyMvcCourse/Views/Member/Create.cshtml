@@ -1,0 +1,46 @@
+﻿@model MyMvcCourse.Models.Member
+
+@{
+    ViewBag.Title = "會員註冊";
+}
+
+<h2>會員註冊</h2>
+
+@using (Html.BeginForm("Create", "Member", FormMethod.Post))
+{
+    <p>
+        帳號:@Html.TextBoxFor(model=> model.UserId,new { @class = "form-control" })
+    </p>
+    <p>
+        密碼:@Html.PasswordFor(model=>model.Pwd,new { @class="form-control"})
+    </p>
+    <p>
+        姓名:@Html.TextBoxFor(x=>x.Name, new { @class = "form-control" })
+    </p>
+    <p>
+        信箱:@Html.TextBoxFor(x=>x.Email, new { @class="form-control", type="email"})
+    </p>
+    <p>
+        生日:@Html.TextBoxFor(x=>x.Birthday, new { @class="form-control", type="date"})
+    </p>
+
+    <p>
+        <input type="submit" value="註冊" class="btn btn-success" />
+    </p>
+
+    <p>
+        @Html.Raw(@ViewBag.Msg)
+    </p>
+
+    <br />
+        <input type="button" class="btn btn-default" value="=default" />
+        <br />
+        <input type="button" class="btn btn-primary" value="=primary" /><br />
+        <input type="button" class="btn btn-success" value="=success" /><br />
+        <input type="button" class="btn btn-info" value="=info" /><br />
+        <input type="button" class="btn btn-warning" value="=warning" /><br />
+        <input type="button" class="btn btn-danger" value="=danger" /><br />
+        <input type="button" class="btn btn-link" value="=link" /><br />
+        <input type="range" min="10" max="200" step="10" />
+}
+

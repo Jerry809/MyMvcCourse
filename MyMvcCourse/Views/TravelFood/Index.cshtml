@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "農村地方美食小吃特色料理";
+}
+
+<script>
+    $(document).ready(function () {
+        var dataurl = "http://localhost:50590/OdwsvTravelFood.json";
+        $.ajax({
+            url: dataurl,
+            type: 'GET',
+            success: function (data) {
+                alert("農村地方美食小吃特色料理共" + data.length + "筆記錄");
+                var html = "";
+                for (var i = 0; i < data.length; i++) {
+                    html += "<tr>" +
+                        "<td>" + data[i].ID + "</td>" +
+                        "<td>" + data[i].Name + "</td>" +
+                        "<td>" + data[i].Address + "</td>" +
+                        "<td>" + data[i].Tel + "</td>" +
+                        "<td>" + data[i].HostWords + "</td>" +
+                        "<td><img src='" + data[i].PicURL + "' style='width:200px;'></td>" +
+                        "<td><a href='https://www.google.com.tw/maps/place/" + data[i].Address +
+                        " ' target='_blank' class='btn btn-info'>地圖</td>" +
+                        "</tr>"
+                }
+                $("#tableshow").append(html);
+            }
+
+        });
+
+    });
+</script>
+
+<table class="table" id="tableshow">
+    <tr>
+        <th>ID</th>
+        <th>名稱</th>
+        <th>地址</th>
+        <th>電話</th>
+        <th>說明</th>
+        <th>照片</th>
+        <th></th>
+    </tr>
+    
+</table>
