@@ -71,7 +71,7 @@ namespace MyMvcCourse.Tests
 
 
                 var result = cn.Query(sql);
-
+                 
             }
             //
             // TODO:  在此加入測試邏輯
