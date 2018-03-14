@@ -292,11 +292,18 @@
     <Content Include="ShoppingCarModel.edmx.diagram">
       <DependentUpon>ShoppingCarModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Views\ShoppingCar\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutShoppingCar.cshtml" />
+    <Content Include="Views\Shared\_LayoutMember.cshtml" />
+    <Content Include="Views\ShoppingCar\Login.cshtml" />
+    <Content Include="Views\ShoppingCar\Register.cshtml" />
+    <Content Include="Views\ShoppingCar\ShoppingCar.cshtml" />
+    <Content Include="Views\ShoppingCar\OrderList.cshtml" />
+    <Content Include="Views\ShoppingCar\OrderDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Photos\" />
-    <Folder Include="Views\ShoppingCar\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
