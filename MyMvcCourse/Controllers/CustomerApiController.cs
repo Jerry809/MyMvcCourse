@@ -80,8 +80,7 @@ namespace MyMvcCourse.Controllers
                 }
                 catch (Exception ex)
                 {
-
-                    throw;
+                    throw ex;
                 }
             }
             return num;
