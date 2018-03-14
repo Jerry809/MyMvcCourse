@@ -16,12 +16,12 @@ namespace MyMvcCourse.Controllers
 
         public ActionResult Register()
         {
-
+            return View();
         }
 
         public ActionResult Login()
         {
-
+            return View();
         }
     }
 }
