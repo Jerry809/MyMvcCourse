@@ -184,6 +184,7 @@
     <Compile Include="Controllers\NightMarketController.cs" />
     <Compile Include="Controllers\PagingSampleController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ShoppingCarController.cs" />
     <Compile Include="Controllers\TravelFoodController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -197,6 +198,33 @@
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShoppingCarModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShoppingCarModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShoppingCarModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShoppingCarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShoppingCarModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShoppingCarModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="tMember.cs">
+      <DependentUpon>ShoppingCarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tOrder.cs">
+      <DependentUpon>ShoppingCarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tOrderDetail.cs">
+      <DependentUpon>ShoppingCarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tProduct.cs">
+      <DependentUpon>ShoppingCarModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -223,6 +251,16 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="ShoppingCarModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ShoppingCarModel.edmx</DependentUpon>
+      <LastGenOutput>ShoppingCarModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ShoppingCarModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ShoppingCarModel.edmx</DependentUpon>
+      <LastGenOutput>ShoppingCarModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -247,10 +285,18 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\TravelFood\Index.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
+    <EntityDeploy Include="ShoppingCarModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ShoppingCarModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ShoppingCarModel.edmx.diagram">
+      <DependentUpon>ShoppingCarModel.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Photos\" />
+    <Folder Include="Views\ShoppingCar\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
