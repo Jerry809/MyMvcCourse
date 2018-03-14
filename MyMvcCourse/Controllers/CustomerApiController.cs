@@ -88,8 +88,16 @@ namespace MyMvcCourse.Controllers
         }
 
         // DELETE: api/Customer/5
-        public void Delete(int id)
-{
-}
+        public int Delete(int fid)
+        {
+            int num = 0;
+            using (var cn = new SqlConnection(_conn))
+            {
+                var query = "delete from tCustomer where fId = @fId";
+                num = cn.Execute(query, new { fId = fid });
+               
+            }
+            return num;
+        }
     }
 }
